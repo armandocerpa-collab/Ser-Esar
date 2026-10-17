@@ -244,15 +244,16 @@
   }
   /* English part — hidden until revealed */
   .translation .t-en {
-    visibility: hidden;
+    opacity: 0;
     background: var(--hidden-bg);
     border-radius: 2px;
     padding: 0 3px;
-    transition: visibility 0s;
+    color: var(--hidden-bg);
+    transition: opacity 0s;
   }
   .translation.revealed { background: var(--subtle); }
   .translation.revealed .t-en {
-    visibility: visible;
+    opacity: 1;
     background: transparent;
     color: var(--slide-title);
   }
@@ -411,19 +412,21 @@
     border-bottom: 2px solid var(--fg);
     min-width: 80px;
     cursor: pointer;
-    visibility: hidden;
+    opacity: 0;
+    color: var(--hidden-bg);
     padding: 0 4px;
     vertical-align: bottom;
     line-height: 1.4;
     user-select: none;
   }
-  .practice-blank.revealed { visibility: visible; color: inherit; }
+  .practice-blank.revealed { opacity: 1; color: inherit; }
   .practice-blank.ser.revealed { color: var(--ser); }
   .practice-blank.estar.revealed { color: var(--estar); }
 
   .practice-en {
     font-size: 0.9rem;
-    visibility: hidden;
+    opacity: 0;
+    color: var(--hidden-bg);
     background: var(--hidden-bg);
     display: inline-block;
     border-radius: 3px;
@@ -432,7 +435,7 @@
     user-select: none;
   }
   .practice-en.revealed {
-    visibility: visible;
+    opacity: 1;
     color: var(--slide-title);
     background: transparent;
   }
